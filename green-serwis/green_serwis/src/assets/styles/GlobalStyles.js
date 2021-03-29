@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components"
 
 export const theme = {
   green: "hsl(136, 53%, 43%)",
+  light_green: "#90EE90",
   grey100: "hsl(0, 0%, 96%)",
   grey200: "hsl(0, 0%, 90%)",
   grey300: "hsl(0, 0%, 70%)",
@@ -28,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   body {
-    margin: 0;
+    margin: 0 auto;
     padding: 80px 65px 0;
     font-family: 'Roboto';
   }

@@ -2,6 +2,7 @@ import React from "react"
 import { GlobalStyle, theme } from "../assets/styles/globalStyles"
 import { ThemeProvider } from "styled-components"
 import Navigation from "../components/Navigation/Navigation"
+import Footer from "../components/Footer/Footer"
 
 const MainLayout = ({ children }) => (
   <>
@@ -9,6 +10,7 @@ const MainLayout = ({ children }) => (
       <GlobalStyle />
       <Navigation />
       {children}
+      <Footer />
     </ThemeProvider>
   </>
 )

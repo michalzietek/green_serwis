@@ -11,12 +11,26 @@ const PreviewWrapper = styled(Link)`
   background-image: url(${({ background }) => background});
   background-repeat: no-repeat;
   text-decoration: none;
+  background-size: cover;
+  background-position: center center;
+
+  @media screen and (max-width: 960px) {
+    width: 100%;
+    height: 33vh;
+  }
+
+  &:hover div {
+    transform: scale(1.2);
+  }
 `
 const PreviewInfoLabel = styled.div`
-  text-align: center;
-  margin-top: 50%;
+  position: absolute;
   color: white;
-  padding: 5px 15px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   h2,
   p {
