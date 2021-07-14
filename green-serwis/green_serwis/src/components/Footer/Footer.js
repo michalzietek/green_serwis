@@ -1,12 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 import { FaFacebook, FaInstagram, FaPhoneAlt } from "react-icons/fa"
-import { Link } from "gatsby"
-import { DiScala } from "react-icons/di"
 
 const FooterContainer = styled.div`
-  background-color: ${({ theme }) => theme.green};
-  display: flex;
+  background: #134E5E;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

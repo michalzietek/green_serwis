@@ -1,12 +1,14 @@
 import { createGlobalStyle } from "styled-components"
 
 export const theme = {
-  green: "hsl(136, 53%, 43%)",
+  green: "#8fd998",
   light_green: "#90EE90",
   grey100: "hsl(0, 0%, 96%)",
   grey200: "hsl(0, 0%, 90%)",
   grey300: "hsl(0, 0%, 70%)",
   black: "hsl(0, 0%, 0%)",
+  gradient_grey: "linear-gradient(to right, #FFFFFF, #ECE9E6)",
+  gradient_green: "linear-gradient(to right, #71B280, #134E5E);",
   light: 300,
   bold: 600,
   fontSize: {
@@ -32,6 +34,10 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     padding: 80px 65px 0;
     font-family: 'Roboto';
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
   }
   button {
     padding: 0;

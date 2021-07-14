@@ -32,7 +32,7 @@ const LocalizationWrapper = styled(Link)`
   text-decoration: none;
   background-size: cover;
   background-position: center center;
-  border-radius: 25px;
+  border-radius: 10px;
   margin-bottom: 5%;
   @media screen and (max-width: 960px) {
     width: 100%;
@@ -47,10 +47,11 @@ const headerData = {
 
 const Contact = ({ data }) => (
   <>
+    {console.log(data)}
     <SiteHeader header={headerData.header} paragraph={headerData.paragraph} />
     <PageWrapper>
       <ContactForm />
-      <LocalizationWrapper background={data.staticMap.mapUrl} to="/" />
+      <LocalizationWrapper background={data.staticMap.childFile.mapUrl} to="/" />
     </PageWrapper>
   </>
 )

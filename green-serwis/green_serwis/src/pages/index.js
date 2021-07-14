@@ -2,6 +2,12 @@ import React from "react"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import { qraphql } from "gatsby"
+import aboutPreview from "../components/AboutPreview/aboutPreview"
+import AboutUsHeroView from "../components/AboutUsHeroView/AboutUsHeroView"
+
+const HeroWrapper = styled.div`
+margin-bottom: 10px;
+`
 
 const StyledHeader = styled.div`
   display: flex;
@@ -11,9 +17,8 @@ const StyledHeader = styled.div`
   flex-wrap: nowrap;
 
   position: absolute;
-  width: 950px;
+  width: 100%;
   height: 310px;
-  left: 20%;
   top: 30%;
   color: ${({ theme }) => theme.grey100};
   justify-content: center;
@@ -22,13 +27,32 @@ const StyledHeader = styled.div`
   filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 1));
   font-weight: 600;
   font-size: 6rem;
-  text-align: center;
+  text-align: left;
 `
-const HeroWrapper = styled.div`
-  width: 100%;
-  height: 100vh;
+const HeroImageWrapper = styled.div`
+  width: 40%;
+  height: 90vh;
   position: relative;
-  margin-top: -80px;
+  float: right;
+  margin-bottom: 10px;
+`
+const HeroTitle = styled.div`
+  width: 60%;
+  height: 90vh;
+  position: relative;
+  left: 35%;
+  transform: translateX(-50%);
+  top: 50%;
+  float: right;
+`
+const FindOutMoreButton = styled.button`
+  background: ${({theme}) => theme.gradient_green};
+  border: none;
+  color: white;
+  height: 5vh;
+  padding: 1%;
+  margin-top: 2%;
+
 `
 const HeroImage = styled.img`
   position: absolute;
@@ -37,40 +61,35 @@ const HeroImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.8;
-  z-index: -1;
   background-repeat: no-repeat;
-  background-size: cover;
-`
-const Slider = styled.div`
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  color: white;
-  padding-bottom: 3%;
+  background-size: contain;
+  float: right;
+  clear: right;
+  border-radius: 0px 20px 0px 20px;
 `
 
-const Header = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: calc(100% - 65px);
-  padding-top: 10%;
-  font-size: ${({ theme }) => theme.fontSize.l};
-`
+const redirectHeroButton = () => {
+  console.log('xd');
+}
 
 const IndexPage = ({ data }) => (
   <>
-    {console.log(data)}
     <SEO title="Home" />
     <HeroWrapper>
+    <HeroImageWrapper>
       <HeroImage src={data.file.publicURL} />
-      <Slider>ODKRYJ</Slider>
+    </HeroImageWrapper>
+    <HeroTitle>
+      <StyledHeader>
+      Pamiętajmy o ogrodach
+      <FindOutMoreButton onClick={redirectHeroButton}>
+        dowiedz się więcej
+      </FindOutMoreButton>
+      </StyledHeader>
+    </HeroTitle>
     </HeroWrapper>
-    <Header>AKTUALNOSCI</Header>
+    <AboutUsHeroView/>
+    <aboutPreview></aboutPreview>
   </>
 )
 

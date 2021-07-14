@@ -6,7 +6,7 @@ const FormWrapper = styled.form`
   flex-direction: column;
   background: ${({ theme }) => theme.green};
   margin: 2%;
-  border-radius: 25px;
+  border-radius: 10px;
 `
 const StyledLabel = styled.label`
   font-size: ${({ theme }) => theme.fontSize.m};

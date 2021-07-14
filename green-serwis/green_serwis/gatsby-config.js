@@ -58,7 +58,7 @@ module.exports = {
             {
               family: "Roboto",
               variants: ["400", "600", "700"],
-              subsets: ["latin"],
+              subsets: ["latin", "latin-ext"],
               //text: 'Hello'
               //fontDisplay: 'swap',
               //strategy: 'selfHosted' // 'base64' || 'cdn'
@@ -96,8 +96,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `green serwis`,
+        short_name: `green serwis`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

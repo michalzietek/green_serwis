@@ -21,7 +21,7 @@ const NavigationWrapper = styled.nav`
   z-index: 999;
 
   @media screen and (max-width: 960px) {
-    background: ${({ click }) => (click ? "#fff" : "transparent")};
+    background: ${({ click }) => (click ? "white" : "transparent")};
     transition: 0.8s all ease;
   }
 `
@@ -66,7 +66,30 @@ const NavigationList = styled.ul`
     top: ${({ click }) => (click ? "100%" : "-1000px")};
     opacity: 1;
     transition: all 0.2s ease;
-    background: #fff;
+    background: white;
+  }
+`
+export const NavLink = styled(Link)`
+  color: #141414;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  &:hover {
+      border-bottom:2px solid ${({theme}) => theme.green};
+      transition: all 0.3s ease;
+      transform-origin:  0% 50%;
+    }
+  @media screen and (max-width: 960px) {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+    &:hover {
+      color: #ff4040;
+      transition: linear 0.3s ease;
+    }
   }
 `
 
@@ -75,29 +98,15 @@ const NavigationListItem = styled.li`
   font-size: 12px;
   margin-left: 10vw;
 
+  ${NavLink}:hover & {
+    border-bottom: 1px solid #000;
+  }
+
   @media screen and (max-width: 960px) {
     width: 100%;
   }
 `
 
-export const NavLink = styled(Link)`
-  color: #141414;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  height: 100%;
-  @media screen and (max-width: 960px) {
-    text-align: center;
-    padding: 2rem;
-    width: 100%;
-    display: table;
-    &:hover {
-      color: #ff4040;
-      transition: all 0.3s ease;
-    }
-  }
-`
 
 const Navigation = () => {
   const [click, setClick] = useState(false)
