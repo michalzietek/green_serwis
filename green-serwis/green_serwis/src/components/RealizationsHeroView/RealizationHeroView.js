@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import RealizationPreview from "../RealizationPreview/RealizationPreview";
 
 const Section = styled.div`
   display: grid;
@@ -9,7 +10,7 @@ const Section = styled.div`
   padding-top: 10%;
   font-size: ${({ theme }) => theme.fontSize.l};
   height: 50vh;
-  background: ${({theme}) => theme.gradient_green};
+  background: ${({theme}) => theme.gradient_grey};
   margin-bottom: 10px;
   left: -80px;
   position: relative;
@@ -23,15 +24,13 @@ const AboutDisplay = styled.div`
 `
 
 const Header = styled.h4`
-    color: white;
+    color: ${({theme}) => theme.green};
     position: relative;
     float: right;
     margin-left: 80%;
     margin-top: -8%;
 `
-const AboutUsList = styled.li`
-    position: relative;
-`
+
 
 const SectionHeader = styled.h5`
     color: white;
@@ -66,45 +65,27 @@ const ButtonWrapper = styled.div`
 `
 
 
-const AboutUsHeroView = () => {
+const RealizationHeroView = ({data}) => {
     return(
         <Section>
             <Header>
-                o nas
+                Nasze realizacje
             </Header>
             <AboutDisplay>
-                <div>
-                <SectionHeader>
-                    20+
-                </SectionHeader>
-                <SectionArticle>
-                    lat doświadczenia
-                </SectionArticle>
-                </div>
-                <div>
-                <SectionHeader>
-                    100+
-                </SectionHeader>
-                <SectionArticle>
-                    skończonych realizacji
-                </SectionArticle>
-                </div>
-                <div>
-                <SectionHeader>
-                    100000+
-                </SectionHeader>
-                <SectionArticle>
-                    posadzonych drzew
-                </SectionArticle>
-                </div>
+                <RealizationPreview header="Ogrody"/>
+                <RealizationPreview header="Drogi"/>
+                <RealizationPreview header="Pozostałe"/>
             </AboutDisplay>
-            <ButtonWrapper>
-                <FindOutMoreButton>
-                    Zapoznaj się z naszymi usługami
-                </FindOutMoreButton>
-            </ButtonWrapper>
         </Section>
     )
 }
 
-export default AboutUsHeroView;
+export const query = graphql`
+  {
+    file(name: { eq: "hero" }) {
+      publicURL
+    }
+  }
+`
+
+export default RealizationHeroView;

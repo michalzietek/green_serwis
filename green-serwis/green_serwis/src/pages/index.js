@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { qraphql } from "gatsby"
 import aboutPreview from "../components/AboutPreview/aboutPreview"
 import AboutUsHeroView from "../components/AboutUsHeroView/AboutUsHeroView"
+import RealizationHeroView from "../components/RealizationsHeroView/RealizationHeroView"
 
 const HeroWrapper = styled.div`
 margin-bottom: 10px;
@@ -17,8 +18,8 @@ const StyledHeader = styled.div`
   flex-wrap: nowrap;
 
   position: absolute;
-  width: 100%;
-  height: 310px;
+  width: 60%;
+  height: 40vh;
   top: 30%;
   color: ${({ theme }) => theme.grey100};
   justify-content: center;
@@ -28,6 +29,7 @@ const StyledHeader = styled.div`
   font-weight: 600;
   font-size: 6rem;
   text-align: left;
+
 `
 const HeroImageWrapper = styled.div`
   width: 40%;
@@ -52,6 +54,10 @@ const FindOutMoreButton = styled.button`
   height: 5vh;
   padding: 1%;
   margin-top: 2%;
+
+  &:hover{
+    box-shadow: inset 0 100px 0 0 green;
+  }
 
 `
 const HeroImage = styled.img`
@@ -89,6 +95,7 @@ const IndexPage = ({ data }) => (
     </HeroTitle>
     </HeroWrapper>
     <AboutUsHeroView/>
+    <RealizationHeroView/>
     <aboutPreview></aboutPreview>
   </>
 )

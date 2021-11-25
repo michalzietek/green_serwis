@@ -1,5 +1,5 @@
 import React from "react"
-import { GlobalStyle, theme } from "../assets/styles/globalStyles"
+import { GlobalStyle, theme } from "../assets/styles/GlobalStyles"
 import { ThemeProvider } from "styled-components"
 import Navigation from "../components/Navigation/Navigation"
 import Footer from "../components/Footer/Footer"
